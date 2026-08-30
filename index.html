@@ -1,7 +1,10 @@
 <!doctype html>
-<html>
+<html lang="ja">
 
 <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.">
+	<title>マイコンカーラリー内輪差自動計算</title>
 <style>
 body {background-color:tan;}
 button {
@@ -17,7 +20,7 @@ border-left:4px solid gray;
 </head>
 
 <body>
-<h1>マイコンカーラリー内輪差自動計算用配列</h1>
+<h1>マイコンカーラリー内輪差自動計算</h1>
 
 <label>トレッド(m単位)</label>
 <input id="tread" type="text" placeholder=""/>
@@ -32,13 +35,16 @@ show up here...
 </code>
 <hr>
 <h2>目的</h2>
-jmcrの公式サイトにあるエクセルのdiff()用内輪差計算シートのようなものをウェブで使えるようにしたかった。計算結果が公式のエクセルと少しズレてるのは多めに見てね。
+jmcrの公式サイトにあるエクセルのdiff()用内輪差計算シートのようなものをウェブで使えるようにしたかった。
 <h2>使い方</h2>
-<p>トレッドとホイールベースをメートル単位で入力してください。Enterボタンを押すとコピペでそのままコードに使える配列が出力されます。C++のra4m1でも使えます。
-<h2>リンク</h2>
-diff()について詳しくは
-https://www2.himdx.net/mcr/product/download/kit12_kaisetsu_r8c38a.pdf
-の186ページあたりに書いてあります。
+<p>トレッドとホイールベースをメートル単位で入力してください。
+<p>Enterボタンを押すとコピペでそのままコードに使える配列が出力されます。C++のra4m1でも使えます。
+<p>計算結果が公式のエクセルと少しズレるので注意です。気にする人は素直にエクセルを使うことをおすすめします。
+
+<h2>参考元</h2>
+<p>diff()について詳しくは
+<p>https://www2.himdx.net/mcr/product/download/kit12_kaisetsu_r8c38a.pdf
+<p>の186ページあたりに書いてあります。
 
 <script>
 function calc() {
