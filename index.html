@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+
+<head>
+<style>
+body {background-color:tan;}
+button {
+	text-align:center;
+	background-color:tomato;
+	color:white;
+}
+h1 {
+border-bottom:4px solid black;
+border-left:4px solid gray;
+}
+</style>
+</head>
+
+<body>
+<h1>マイコンカーラリー内輪差自動計算用配列</h1>
+
+<label>トレッド(m単位)</label>
+<input id="tread" type="text" placeholder=""/>
+<br>
+<label>ホイールベース(m単位)</label>
+<input id="wheel-base" type="text" placeholder=""/>
+<button id="button" onclick="calc()">Enter</button>
+
+<h2>コピペ用コード</h2>
+<code id="perface">
+show up here...
+</code>
+<hr>
+<h2>目的</h2>
+jmcrの公式サイトにあるエクセルのdiff()用内輪差計算シートのようなものをウェブで使えるようにしたかった。計算結果が公式のエクセルと少しズレてるのは多めに見てね。
+<h2>使い方</h2>
+<p>トレッドとホイールベースをメートル単位で入力してください。Enterボタンを押すとコピペでそのままコードに使える配列が出力されます。C++のra4m1でも使えます。
+<h2>リンク</h2>
+diff()について詳しくは
+https://www2.himdx.net/mcr/product/download/kit12_kaisetsu_r8c38a.pdf
+の186ページあたりに書いてあります。
+
+<script>
+function calc() {
+const tread = document.getElementById("tread");
+const wheelBase = document.getElementById("wheel-base");
+
+if(tread.value == '') {
+	tread.placeholder = "fill this field";
+	return 1;
+}
+else if(wheelBase.value == '') {
+	wheelBase.placeholder = "fill this field"
+	return 1;
+}
+
+
+perface.textContent = 'const revolution_difference[] = {';
+
+
+
+
+
+const angleSequence = [];
+const r2Sequence = [];
+const r1Sequence = [];
+const r3Sequence = [];
+const resultSequence = [];
+
+for (let i = 0; i < 46; i++) {
+	angleSequence[i] = i;
+}
+for (let i = 0; i < 46; i++) {
+	r2Sequence[i] = wheelBase.value / getTanDeg(angleSequence[i]);
+	
+}
+
+for (let i = 0; i < 46; i++) {
+	r1Sequence[i] = r2Sequence[i] - tread.value / 2;
+}
+
+for (let i = 0; i < 46; i++) {
+	r3Sequence[i] = r2Sequence[i] + tread.value / 2;
+}
+
+for (let i = 0; i < 46; i++) {
+	resultSequence[i] = Math.floor(r1Sequence[i] / r3Sequence[i] * 100);
+}
+
+resultSequence[0] = 100;
+perface.textContent += resultSequence + '};';
+
+
+}
+function getTanDeg(deg) {
+  const rad = (deg * Math.PI) / 180;
+  return Math.tan(rad);
+}
+
+
+</script>
+
+
+</body>
+</html>
