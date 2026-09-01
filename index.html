@@ -42,11 +42,25 @@ jmcrの公式サイトにあるエクセルのdiff()用内輪差計算シート�
 <p>計算結果が公式のエクセルと少しズレるので注意です。気にする人は素直にエクセルを使うことをおすすめします。
 
 <h2>参考元</h2>
-<p>diff()について詳しくは
+<p>内輪差の計算方法について詳しくは
 <p>https://www2.himdx.net/mcr/product/download/kit12_kaisetsu_r8c38a.pdf
 <p>の186ページあたりに書いてあります。
+<p>また、内輪差計算のエクセルは<a href="https://www2.himdx.net/mcr/product/download.html">こちら</a>からダウンロードできます。
+<p>エクセルファイルへの直リンクは<a href="https://www2.himdx.net/mcr/product/download/kakudo_r8c.zip">これ</a>。
 
+<h2>更新履歴</h2>
+<dl>
+	<dt>9/1</dt>
+	<dd>ちょいと文章改善と更新履歴とdocument.lastModifiedを追加.最終更新日はgithub pagesで使えるのか?</dd>
+</dl>
+<dl>
+	<dt>8/28</dt>
+	<dd>制作&webに公開</dd>
+</dl>
+<div id="lm" style="text-align:right;">last modified:</div>
 <script>
+let lm = document.getElementById("lm");
+lm.textContent += document.lastModified;
 function calc() {
 const tread = document.getElementById("tread");
 const wheelBase = document.getElementById("wheel-base");
@@ -62,10 +76,6 @@ else if(wheelBase.value == '') {
 
 
 perface.textContent = 'const revolution_difference[] = {';
-
-
-
-
 
 const angleSequence = [];
 const r2Sequence = [];
@@ -105,7 +115,5 @@ function getTanDeg(deg) {
 
 
 </script>
-
-
 </body>
 </html>
