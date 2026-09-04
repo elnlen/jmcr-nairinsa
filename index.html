@@ -2,8 +2,8 @@
 <html lang="ja">
 
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<title>マイコンカーラリー内輪差自動計算</title>
 <style>
 body {background-color:tan;}
@@ -12,7 +12,8 @@ button {
 	background-color:tomato;
 	color:white;
 }
-h1 {
+.home {text-align:center;}
+.title {
 border-bottom:4px solid black;
 border-left:4px solid gray;
 }
@@ -20,7 +21,8 @@ border-left:4px solid gray;
 </head>
 
 <body>
-<h1>マイコンカーラリー内輪差自動計算</h1>
+<h1 class="home"><a href="https://elnlen.github.io">elnlen.github.io</a></h1>
+<h1 class="title">マイコンカーラリー内輪差自動計算</h1>
 
 <label>トレッド(m単位)</label>
 <input id="tread" type="text" placeholder=""/>
@@ -50,12 +52,15 @@ jmcrの公式サイトにあるエクセルのdiff()用内輪差計算シート�
 
 <h2>更新履歴</h2>
 <dl>
+	<dt>9/4</dt>
+	<dd>h1でサイト名の表示と中央寄せ用のhomeクラスを追加.伴ってtitleクラス追加</dd>
+<dl>
 	<dt>9/1</dt>
 	<dd>ちょいと文章改善と更新履歴とdocument.lastModifiedを追加.最終更新日はgithub pagesで使えるのか?</dd>
 </dl>
 <dl>
 	<dt>8/28</dt>
-	<dd>制作&webに公開</dd>
+	<dd>制作&amp;webに公開</dd>
 </dl>
 <div id="lm" style="text-align:right;">last modified:</div>
 <script>
